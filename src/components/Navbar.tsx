@@ -23,14 +23,30 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [menuOpen,   setMenuOpen]   = useState(false);
   const [scrolled,   setScrolled]   = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
   const navRef   = useRef<HTMLElement>(null);
 
-  // Add subtle shadow when page is scrolled
+  // Add subtle shadow and update the navbar progress border while scrolling.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const updateScrollState = () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+
+      setScrolled(window.scrollY > 10);
+      setScrollProgress(Math.min(Math.max(progress, 0), 1));
+    };
+
+    updateScrollState();
+    const onScroll = () => updateScrollState();
+
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', updateScrollState);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', updateScrollState);
+    };
   }, []);
 
   // Close mobile menu when route changes
@@ -182,6 +198,13 @@ export default function Navbar() {
           </ul>
         </div>
       </nav>
+
+      <div className="absolute inset-x-0 bottom-0 h-[3px] bg-neutral-200/80" aria-hidden="true">
+        <div
+          className="h-full origin-left bg-gold-500 transition-transform duration-150 ease-out"
+          style={{ transform: `scaleX(${scrollProgress})` }}
+        />
+      </div>
     </header>
   );
 }
