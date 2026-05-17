@@ -28,35 +28,35 @@ const openSans = Open_Sans({
 // ─── Site-wide metadata ───────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://greenheroesfoundation.org'),
+  metadataBase: new URL('https://dreamlifeafrica.co.ke'),
   title: {
-    default: 'Green Heroes Foundation | Military NGO',
-    template: '%s | Green Heroes Foundation',
+    default: 'Dreamlife Africa | Transforming Lives Across Africa',
+    template: '%s | Dreamlife Africa',
   },
   description:
-    'Green Heroes Foundation is a non-profit organization dedicated to supporting veterans, active-duty personnel, and their families through programs, advocacy, and community building.',
+    'Dreamlife Africa promotes social development, economic stability, and fulfilled dreams across Africa through education, mentorship, leadership, and empowerment programs.',
   keywords: [
-    'military NGO',
-    'veteran support',
-    'military charity',
-    'Green Heroes Foundation',
-    'veterans affairs',
-    'active duty support',
-    'GHF',
+    'Dreamlife Africa',
+    'education scholarships',
+    'youth mentorship',
+    'leadership development',
+    'women empowerment',
+    'Dreamfund',
+    'social enterprise Africa',
   ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Green Heroes Foundation',
-    title: 'Green Heroes Foundation | Military NGO',
+    siteName: 'Dreamlife Africa',
+    title: 'Dreamlife Africa | Transforming Lives Across Africa',
     description:
-      'Supporting veterans, active-duty personnel, and their families through programs, advocacy, and community.',
+      'Promoting social development, economic stability, and fulfilled dreams across Africa.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Green Heroes Foundation | Military NGO',
+    title: 'Dreamlife Africa | Transforming Lives Across Africa',
     description:
-      'Supporting veterans, active-duty personnel, and their families.',
+      'Education, mentorship, leadership, and empowerment programs across Africa.',
   },
   robots: {
     index: true,

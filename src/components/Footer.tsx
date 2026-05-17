@@ -8,9 +8,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const QUICK_LINKS = [
-  { href: '/',        label: 'Home'    },
-  { href: '/blog',    label: 'Blog'    },
   { href: '/about',   label: 'About'   },
+  { href: '/programs', label: 'Programs'},
+  {href: '/dreamfund', label: 'DreamFund'},
+  { href: '/gallery',    label: 'Gallery'},
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -65,7 +66,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-mil-black-800 border-t border-mil-green-800/40"
+      className="bg-[#fbfbf7] border-t border-neutral-200/80"
       role="contentinfo"
     >
       {/* ── Main footer content ── */}
@@ -77,7 +78,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4 group w-fit">
             <Image
               src="/images/heroes (round).png"
-              alt="Green Heroes Foundation"
+              alt="Dreamlife Africa"
               width={44}
               height={44}
               className="rounded-full object-cover"
@@ -85,8 +86,8 @@ export default function Footer() {
               
             </Link>
 
-            <p className="text-gray-400 text-sm leading-relaxed max-w-md mb-6">
-             We are dedicated to providing care and support to our war veterans and their families in times of need.
+            <p className="text-neutral-600 text-sm leading-relaxed max-w-md mb-6">
+              Transforming lives and destinies across Africa through education, mentorship, leadership, and empowerment.
             </p>
 
             {/* Social icons */}
@@ -96,8 +97,8 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="text-gray-500 hover:text-gold-500 transition-colors duration-200
-                             p-2 rounded hover:bg-mil-green-900/30"
+                  className="text-neutral-500 hover:text-mil-black-800 transition-colors duration-200
+                             p-2 rounded hover:bg-neutral-100"
                 >
                   {icon}
                 </a>
@@ -108,7 +109,7 @@ export default function Footer() {
           {/* ── Quick links ── */}
           <div>
             <h3 className="font-heading font-semibold uppercase tracking-widest text-sm
-                           text-gold-500 mb-4">
+                           text-mil-black-800 mb-4">
               Quick Links
             </h3>
             <ul className="space-y-2" role="list">
@@ -116,11 +117,11 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-gray-400 hover:text-white text-sm transition-colors
+                    className="text-neutral-600 hover:text-neutral-950 text-sm transition-colors
                                duration-200 flex items-center gap-2 group"
                   >
-                    <span className="w-1 h-1 rounded-full bg-mil-green-600
-                                     group-hover:bg-gold-500 transition-colors duration-200"
+                    <span className="w-1 h-1 rounded-full bg-neutral-300
+                                     group-hover:bg-mil-black-800 transition-colors duration-200"
                           aria-hidden="true" />
                     {label}
                   </Link>
@@ -132,39 +133,39 @@ export default function Footer() {
           {/* ── Contact info ── */}
           <div>
             <h3 className="font-heading font-semibold uppercase tracking-widest text-sm
-                           text-gold-500 mb-4">
+                           text-mil-black-800 mb-4">
               Contact Us
             </h3>
-            <ul className="space-y-3 text-sm text-gray-400" role="list">
+            <ul className="space-y-3 text-sm text-neutral-600" role="list">
               <li className="flex items-start gap-3">
-                <svg className="w-4 h-4 text-mil-green-500 mt-0.5 flex-shrink-0"
+                <svg className="w-4 h-4 text-mil-black-800 mt-0.5 flex-shrink-0"
                      fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round"
                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>Suite 27, Brigade of Guards Shopping Complex,<br />Aguiyi Ironsi Barracks, Asokoro, Abuja.</span>
+                <span>Dominion Centre,<br />along Kangundo Road.</span>
               </li>
               <li className="flex items-center gap-3">
-                <svg className="w-4 h-4 text-mil-green-500 flex-shrink-0"
+                <svg className="w-4 h-4 text-mil-black-800 flex-shrink-0"
                      fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round"
                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:info@greenheroesfoundation.org"
-                   className="hover:text-gold-500 transition-colors duration-200">
-                  info@greenheroesfoundation.ng
+                <a href="mailto:info@dreamlifeafrica.co.ke"
+                   className="hover:text-mil-black-800 transition-colors duration-200">
+                  info@dreamlifeafrica.co.ke
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <svg className="w-4 h-4 text-mil-green-500 flex-shrink-0"
+                <svg className="w-4 h-4 text-mil-black-800 flex-shrink-0"
                      fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round"
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <a href="tel:+12025550147"
-                   className="hover:text-gold-500 transition-colors duration-200">
-                  0803 384 9024
+                <a href="tel:+254721657845"
+                   className="hover:text-mil-black-800 transition-colors duration-200">
+                  +254 721 657 845
                 </a>
               </li>
             </ul>
@@ -173,14 +174,14 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="border-t border-mil-green-900/40">
+      <div className="border-t border-neutral-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4
-                        flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
-          <p>© {currentYear} Green Heroes Foundation. All rights reserved.</p>
+                        flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neutral-500">
+          <p>© {currentYear} Dreamlife Africa. All rights reserved.</p>
           <p>
-            501(c)(3) Non-Profit Organization &nbsp;·&nbsp;
-            <Link href="/contact" className="hover:text-gold-500 transition-colors duration-200">
-              Privacy Policy
+            Social Enterprise &nbsp;·&nbsp;
+            <Link href="/contact" className="hover:text-mil-black-800 transition-colors duration-200">
+              Contact
             </Link>
           </p>
         </div>

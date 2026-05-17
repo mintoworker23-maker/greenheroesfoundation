@@ -11,15 +11,15 @@ import ContactForm from '@/components/ContactForm';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with Green Heroes Foundation — volunteer, donate, request veteran support, or explore partnership opportunities.',
+    'Contact Dreamlife Africa for programs, partnerships, Dreamfund support, and administrative inquiries.',
 };
 
 // ─── Contact info items ───────────────────────────────────────────────────────
 
 const CONTACT_ITEMS = [
   {
-    label: 'Address',
-    value: 'Suite 27, Brigade of Guards Shopping Complex,Aguiyi Ironsi Barracks, Asokoro, Abuja.',
+    label: 'Offices',
+    value: 'Head Office: Dominion Centre, along Kangundo Road. Regional Office: Eastland Offices, Mother Terressa Road, Huruma.',
     href: undefined,
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor"
@@ -33,8 +33,8 @@ const CONTACT_ITEMS = [
   },
   {
     label: 'Email',
-    value: 'info@greenheroesfoundation.ng',
-    href: 'mailto:info@greenheroesfoundation.org',
+    value: 'info@dreamlifeafrica.co.ke',
+    href: 'mailto:info@dreamlifeafrica.co.ke',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor"
            strokeWidth="1.5" viewBox="0 0 24 24">
@@ -45,8 +45,8 @@ const CONTACT_ITEMS = [
   },
   {
     label: 'Phone',
-    value: '0803 384 9024',
-    href: 'tel:+0803 384 9024',
+    value: '+254 721 657 845 / +254 710 331 770',
+    href: 'tel:+254721657845',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor"
            strokeWidth="1.5" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ const CONTACT_ITEMS = [
   },
   {
     label: 'Office Hours',
-    value: 'Mon–Fri  9:00 AM – 5:00 PM EST',
+    value: 'Monday to Friday, 8:00 AM to 4:00 PM (EAT)',
     href: undefined,
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor"
@@ -73,7 +73,7 @@ const CONTACT_ITEMS = [
 
 export default function ContactPage() {
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       {/* ── Page header ── */}
       <div className="bg-mil-black-800 border-b border-mil-green-800/30 py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,47 +83,46 @@ export default function ContactPage() {
           <h1 className="section-heading mb-0">Contact Us</h1>
           <span className="gold-divider mt-3 block" aria-hidden="true" />
           <p className="mt-5 text-gray-400 max-w-2xl leading-relaxed">
-            Whether you want to volunteer, donate, request support, or simply learn more —
-            we want to hear from you.
+            Reach out for program questions, partnerships, Dreamfund support, or Boresha Maisha groups.
           </p>
         </div>
       </div>
 
       {/* ── Main content ── */}
+      <section className="bg-[#fbfbf7] border-b border-gold-500/100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
 
           {/* ── Left: contact info ── */}
           <aside className="lg:col-span-2 space-y-8" aria-label="Contact information">
             <div>
-              <h2 className="font-heading font-bold text-white uppercase tracking-widest text-xl mb-4">
-                Get in Touch
+              <h2 className="font-heading font-bold text-mil-black-800 uppercase tracking-widest text-xl mb-4">
+                Contact Dreamlife Africa
               </h2>
               <span className="gold-divider block mb-6" aria-hidden="true" />
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Our team responds to all inquiries within 2 business days.
-                For urgent veteran assistance, please call our hotline directly.
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                For administrative issues, email info@dreamlifeafrica.co.ke. For the chief executive&apos;s office, email willson@dreamlifeafrica.co.ke.
               </p>
             </div>
 
             <ul className="space-y-5" role="list" aria-label="Contact details">
               {CONTACT_ITEMS.map(({ label, value, href, icon }) => (
                 <li key={label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded bg-mil-green-800/40 border border-mil-green-700/30
+                  <div className="w-10 h-10 rounded bg-white border border-neutral-200
                                   flex items-center justify-center text-gold-500 flex-shrink-0">
                     {icon}
                   </div>
                   <div>
-                    <p className="font-heading text-xs uppercase tracking-widest text-gray-500 mb-0.5">
+                    <p className="font-heading text-xs uppercase tracking-widest text-neutral-500 mb-0.5">
                       {label}
                     </p>
                     {href ? (
                       <a href={href}
-                         className="text-sm text-gray-300 hover:text-gold-500 transition-colors duration-200">
+                         className="text-sm text-neutral-700 hover:text-gold-600 transition-colors duration-200">
                         {value}
                       </a>
                     ) : (
-                      <p className="text-sm text-gray-300">{value}</p>
+                      <p className="text-sm text-neutral-700">{value}</p>
                     )}
                   </div>
                 </li>
@@ -131,16 +130,15 @@ export default function ContactPage() {
             </ul>
 
             {/* Volunteer CTA card */}
-            <div className="bg-mil-green-800/30 border border-mil-green-700/30 rounded-lg p-5">
+            <div className="bg-white border border-neutral-200 rounded-lg p-5 shadow-sm">
               <h3 className="font-heading font-bold text-gold-500 uppercase tracking-wider text-sm mb-2">
-                Become a Volunteer
+                Start a Boresha Maisha Group
               </h3>
-              <p className="text-gray-400 text-xs leading-relaxed mb-4">
-                Join over 300 volunteers nationwide making a real difference in veterans&apos; lives.
-                No prior military experience required.
+              <p className="text-neutral-600 text-xs leading-relaxed mb-4">
+                Contact us if you want to start a Boresha Maisha group in your area.
               </p>
               <Link href="#contact-form" className="btn-primary text-xs">
-                Apply Now
+                Use Contact Form
               </Link>
             </div>
           </aside>
@@ -160,6 +158,7 @@ export default function ContactPage() {
 
         </div>
       </div>
+      </section>
     </div>
   );
 }

@@ -13,9 +13,10 @@ import Image from 'next/image';
 
 
 const NAV_LINKS = [
-  { href: '/',        label: 'Home'    },
-  { href: '/blog',    label: 'Blog'    },
   { href: '/about',   label: 'About'   },
+  { href: '/programs', label: 'Programs'},
+  {href: '/dreamfund', label: 'DreamFund'},
+  { href: '/gallery',    label: 'Gallery'},
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -53,26 +54,26 @@ export default function Navbar() {
     <header
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        bg-mil-black-700/95 backdrop-blur-sm border-b border-mil-green-800/40
-        ${scrolled ? 'shadow-lg shadow-black/50' : ''}`}
+        bg-[#fbfbf7]/95 backdrop-blur-sm border-b border-neutral-200/80
+        ${scrolled ? 'shadow-lg shadow-neutral-900/10' : ''}`}
       role="banner"
     >
       <nav
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-24">
           {/* ── Logo / Brand ── */}
           <Link
             href="/"
             className="flex items-center gap-3 group"
-            aria-label="Green Heroes Foundation — Home"
+            aria-label="Dreamlife Africa Home"
           >
             <Image
-              src="/images/heroes (round).png"
-              alt="Green Heroes Foundation"
-              width={44}
-              height={44}
+              src="/images/logo.png"
+              alt="Dreamlife Africa"
+              width={100}
+              height={100}
               className="rounded-full object-cover"
             />
 
@@ -95,15 +96,15 @@ export default function Navbar() {
                                 text-sm transition-colors duration-200 rounded
                                 ${
                                   isActive
-                                    ? 'text-gold-500'
-                                    : 'text-gray-300 hover:text-white'
+                                    ? 'text-mil-black-800'
+                                    : 'text-neutral-700 hover:text-neutral-950'
                                 }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {label}
                     {/* Active underline indicator */}
                     {isActive && (
-                      <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold-500 rounded-full" />
+                      <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-mil-black-800 rounded-full" />
                     )}
                   </Link>
                 </li>
@@ -121,8 +122,8 @@ export default function Navbar() {
           {/* ── Mobile hamburger ── */}
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="md:hidden p-2 rounded text-gray-300 hover:text-white
-                       hover:bg-mil-green-800/40 transition-colors duration-200"
+            className="md:hidden p-2 rounded text-neutral-700 hover:text-neutral-950
+                       hover:bg-neutral-100 transition-colors duration-200"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -149,7 +150,7 @@ export default function Navbar() {
             ${menuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}
         >
           <ul
-            className="flex flex-col py-4 border-t border-mil-green-800/40 space-y-1"
+            className="flex flex-col py-4 border-t border-neutral-200/80 space-y-1"
             role="list"
           >
             {NAV_LINKS.map(({ href, label }) => {
@@ -163,8 +164,8 @@ export default function Navbar() {
                                 text-sm rounded transition-colors duration-200
                                 ${
                                   isActive
-                                    ? 'text-gold-500 bg-mil-green-900/30'
-                                    : 'text-gray-300 hover:text-white hover:bg-mil-green-900/20'
+                                    ? 'text-mil-black-800 bg-green-500/10'
+                                    : 'text-neutral-700 hover:text-neutral-950 hover:bg-neutral-100'
                                 }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -175,7 +176,7 @@ export default function Navbar() {
             })}
             <li className="pt-2 px-4">
               <Link href="/contact" className="btn-primary w-full justify-center text-xs">
-                Get Involved
+                Partner With Us
               </Link>
             </li>
           </ul>

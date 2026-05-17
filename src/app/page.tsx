@@ -16,40 +16,42 @@ import Link from 'next/link';
 import { getLatestPosts } from '@/lib/blog';
 import BlogCard from '@/components/BlogCard';
 import GalleryLightbox from '@/components/GalleryLightbox';
+import HeroBackgroundCarousel from '@/components/HeroBackgroundCarousel';
+import DonateModal from '@/components/DonateModal';
 
 export const metadata: Metadata = {
-  title: 'Home | Green Heroes Foundation',
+  title: 'Home | Dreamlife Africa',
   description:
-    'Green Heroes Foundation — supporting veterans, active-duty personnel, and military families through programs, advocacy, and community outreach.',
+    'Dreamlife Africa promotes social development, economic stability, and fulfilled dreams across Africa through education, mentorship, leadership, and empowerment programs.',
 };
 
 // ─── Static data ─────────────────────────────────────────────────────────────
 
 // ── Gallery images (from /public/images) ─────────────────────────────────────
 const GALLERY_IMAGES = [
-  { src: '/images/ghf_one.jpg',   alt: 'GHF community event',          tall: false },
-  { src: '/images/ghf_two.jpg',   alt: 'GHF field operations',         tall: false },
-  { src: '/images/ghf_three.jpg', alt: 'GHF outreach program',         tall: false },
-  { src: '/images/ghf_four.jpg',  alt: 'GHF team in action',           tall: false },
-  { src: '/images/ghf_five.jpg',  alt: 'GHF veterans support',         tall: false },
-  { src: '/images/ghf_six.jpg',   alt: 'GHF community gathering',      tall: false },
-  { src: '/images/ghf_seven.jpg', alt: 'GHF mission in progress',      tall: false },
-  { src: '/images/ghf_eight.jpg', alt: 'GHF outreach activity',        tall: false },
-  { src: '/images/ghf_nine.jpg',  alt: 'GHF service members together', tall: false },
+  { src: '/images/ghf_one.jpg',   alt: 'Dreamlife Africa community program', tall: false },
+  { src: '/images/ghf_two.jpg',   alt: 'Dreamlife Africa field outreach',    tall: false },
+  { src: '/images/ghf_three.jpg', alt: 'Dreamlife Africa mentorship session', tall: false },
+  { src: '/images/ghf_four.jpg',  alt: 'Dreamlife Africa team in action',     tall: false },
+  { src: '/images/ghf_five.jpg',  alt: 'Dreamlife Africa education support',  tall: false },
+  { src: '/images/ghf_six.jpg',   alt: 'Dreamlife Africa community gathering', tall: false },
+  { src: '/images/ghf_seven.jpg', alt: 'Dreamlife Africa program activity',    tall: false },
+  { src: '/images/ghf_eight.jpg', alt: 'Dreamlife Africa outreach activity',   tall: false },
+  { src: '/images/ghf_nine.jpg',  alt: 'Dreamlife Africa youth support',       tall: false },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
 
 const STATS = [
-  { value: '1,000+', label: 'Veterans Supported' },
-  { value: '6',       label: 'Years of Service'   },
-  { value: '100+',    label: 'Volunteers'          },
+  { value: '4',      label: 'Core Programs' },
+  { value: '1',      label: 'Dreamfund'     },
+  { value: 'Africa', label: 'Our Focus'     },
 ];
 
 const PROGRAMS = [
   {
     icon: (
-      /* Circular arrows — redirecting, finding a new path after service */
+      /* Circular arrows, progress through education support */
       <svg className="w-7 h-7" fill="none" stroke="currentColor"
            strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round"
@@ -58,20 +60,20 @@ const PROGRAMS = [
                  13.803-3.7l3.181 3.182m0-4.991v4.99" />
       </svg>
     ),
-    title: 'REORIENTATION & REINTEGRATION',
+    title: 'EDUCATION SCHOLARSHIPS',
     description:
-      'It is on record that the Armed Forces of Nigeria have commenced steps to ameliorate the plights of war veterans amidst other contending issues.',
+      'Scholarships for deserving primary, secondary, and college students who need support to keep learning.',
   },
   {
     icon: (
-      /* Head silhouette + lightning bolt — trauma and shock of PTSD */
+      /* Head silhouette, growth through mentorship */
       <svg className="w-7 h-7" fill="none" stroke="currentColor"
            strokeWidth="1.5" viewBox="0 0 24 24">
         {/* Head/brain outline */}
         <path strokeLinecap="round" strokeLinejoin="round"
               d="M12 3a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.19V15a1 1 0 0 1-1 1H10
                  a1 1 0 0 1-1-1v-.81A6.003 6.003 0 0 1 6 9a6 6 0 0 1 6-6Z" />
-        {/* Lightning bolt — trauma / flashback */}
+        {/* Lightning bolt, energy and focus */}
         <path strokeLinecap="round" strokeLinejoin="round"
               d="M12.5 6.5 10 10h2.5L11 13.5" />
         {/* Base/neck connector */}
@@ -79,22 +81,10 @@ const PROGRAMS = [
               d="M10 18h4" />
       </svg>
     ),
-    title: 'POST TRAUMATIC STRESS DISORDER',
+    title: 'YOUTH MENTORSHIP',
     description:
-      'For centuries, there have been numerous casualties of war, soldiers with various physical injuries of war can be seen but we really know little of the emotional and the silent injuries of war on soldiers, their families.',
+      'Life-skills workshops, mentorship camps, career retreats, and talent support for young people.',
   },
-  // {
-  //   icon: (
-  //     <svg className="w-7 h-7" fill="none" stroke="currentColor"
-  //          strokeWidth="1.5" viewBox="0 0 24 24">
-  //       <path strokeLinecap="round" strokeLinejoin="round"
-  //             d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-  //     </svg>
-  //   ),
-  //   title: 'VETERAN\'S FAMILY SUPPORT',
-  //   description:
-  //     'There is no such thing as an unwounded soldier. When a soldier goes to war, all family members are at war. the wives and children are left to cope with the absence of the deployed soldier.',
-  // },
   {
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor"
@@ -103,9 +93,9 @@ const PROGRAMS = [
               d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
       </svg>
     ),
-    title: 'VETERAN\'S FAMILY SUPPORT',
+    title: 'LEADERSHIP AND WOMEN EMPOWERMENT',
     description:
-      'There is no such thing as an unwounded soldier. When a soldier goes to war, all family members are at war. the wives and children are left to cope with the absence of the deployed soldier.',
+      'Leadership training for community and church leaders, plus Boresha Maisha support for women building small businesses.',
   },
 ];
 
@@ -123,21 +113,7 @@ export default async function HomePage() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
         aria-label="Hero section"
       >
-        {/* Background image with overlay */}
-        <div className="absolute inset-0 z-0">
-          {/* <Image
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80"
-            alt="Military personnel standing in formation"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          /> */}
-          {/* Camo texture — repeating SVG woodland pattern */}
-          <div className="absolute inset-0 camo-texture opacity-60" />
-          {/* Dark gradient so text stays legible */}
-          <div className="absolute inset-0 bg-gradient-to-b from-mil-black/75 via-mil-black/55 to-mil-black/95" />
-        </div>
+        <HeroBackgroundCarousel />
 
         {/* Decorative corner accents */}
         <div className="absolute top-24 left-8 w-16 h-16 border-t-2 border-l-2 border-gold-500/30 z-10" aria-hidden="true" />
@@ -151,7 +127,7 @@ export default async function HomePage() {
           <p className="inline-flex items-center gap-2 font-heading text-xs uppercase
                         tracking-[0.3em] text-gold-500 mb-6 animate-fade-in">
             <span className="w-8 h-px bg-gold-500" aria-hidden="true" />
-            Non-Profit Military Organization
+            Social Enterprise Across Africa
             <span className="w-8 h-px bg-gold-500" aria-hidden="true" />
           </p>
 
@@ -159,23 +135,23 @@ export default async function HomePage() {
           <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl
                          text-white uppercase tracking-widest leading-none mb-6
                          animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
-            We Serve{' '}
-            <span className="text-gold-500">Those</span>
+            Transforming{' '}
+            <span className="text-gold-500">Lives</span>
             <br />
-            Who Served
+            And Destinies
           </h1>
 
           {/* Subheading */}
           <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10
                         animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-           We are dedicated to providing care and support to our war veterans and their families in times of need.
+            We shape mindsets, inspire dreams, and help people build dignified, sustainable lives.
           </p>
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center
                           animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
             <Link href="/contact" className="btn-primary text-base px-8 py-4">
-              Get Involved
+              Partner With Us
               <svg className="w-5 h-5" fill="none" stroke="currentColor"
                    strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -227,7 +203,7 @@ export default async function HomePage() {
           3. CORE PROGRAMS
       ════════════════════════════════════════════════════════ */}
       <section
-        className="py-20 lg:py-28 bg-mil-black-800"
+        className="py-20 lg:py-28 bg-[#fbfbf7] border-b border-gold-500/100"
         aria-labelledby="programs-heading"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -238,14 +214,13 @@ export default async function HomePage() {
             </p>
             <h2
               id="programs-heading"
-              className="section-heading"
+              className="section-heading text-mil-black-800"
             >
-              OUR CORE PROGRAMMMES
+              OUR CORE PROGRAMS
             </h2>
             <span className="gold-divider mx-auto mt-3" aria-hidden="true" />
-            <p className="mt-5 text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Green Heroes Foundation is a Non-Governmental Organization that is wholly run by retired military personnel with specialist supports from some well-meaning individuals and organizations. The Foundation is designed to cater and support Nigerian Armed Forced war veterans as well as provide for their families in times of need.
-
+            <p className="mt-5 text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+              Dreamlife Africa partners with churches, ministries, schools, community organizations, and companies to advance social and economic programs across Africa.
             </p>
           </div>
 
@@ -254,23 +229,23 @@ export default async function HomePage() {
             {PROGRAMS.map(({ icon, title, description }, i) => (
               <div
                 key={title}
-                className="bg-mil-black-700 border border-mil-green-800/30 rounded-lg p-6
+                className="bg-white border border-neutral-200 rounded-lg p-6
                            hover:border-gold-500/40 hover:-translate-y-1 hover:shadow-xl
-                           hover:shadow-mil-green-900/20 transition-all duration-300
+                           hover:shadow-neutral-900/10 transition-all duration-300
                            group animate-on-scroll"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-lg bg-mil-green-800/50 border border-mil-green-700/40
-                                flex items-center justify-center text-mil-green-400
-                                group-hover:bg-mil-green-800 group-hover:text-gold-500
+                <div className="w-14 h-14 rounded-lg bg-gold-500/10 border border-gold-500/20
+                                flex items-center justify-center text-gold-600
+                                group-hover:bg-gold-500/15
                                 transition-all duration-300 mb-5">
                   {icon}
                 </div>
-                <h3 className="font-heading font-bold text-white uppercase tracking-wide text-base mb-3">
+                <h3 className="font-heading font-bold text-mil-black-800 uppercase tracking-wide text-base mb-3">
                   {title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+                <p className="text-neutral-600 text-sm leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
@@ -278,7 +253,7 @@ export default async function HomePage() {
           {/* Learn more CTA */}
           <div className="text-center mt-12">
             <Link href="/about" className="btn-outline">
-              View All Programs
+              Learn About Our Work
             </Link>
           </div>
         </div>
@@ -288,7 +263,7 @@ export default async function HomePage() {
           4. FEATURE CONTENT BLOCK  (text left · image right)
              ─ Edit the text and image src below freely ─
       ════════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 bg-mil-black" aria-labelledby="feature-heading">
+      <section className="py-20 lg:py-28 bg-mil-black-800" aria-labelledby="feature-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -300,17 +275,17 @@ export default async function HomePage() {
               </p>
 
               {/* Main heading */}
-              <h2 id="feature-heading" className="section-heading mb-3">
-                Standing With Those{' '}
-                <span className="text-gold-500">Who Served</span>
+              <h2 id="feature-heading" className=" text-white section-heading mb-3">
+                Hope Made Practical{' '}
+                <span className="text-gold-500">Across Africa</span>
               </h2>
               <span className="gold-divider mb-6 block" aria-hidden="true" />
 
               {/* Body — replace these paragraphs with your own text */}
               <p className="text-gray-300 leading-relaxed text-base mb-4">
-               Green Heroes Foundation is a Non-Governmental Organization which is wholly run by retired military personnel with specialist supports from some well-meaning individuals and organizations. The Foundation is designed to cater and support Nigerian Armed Forced war veterans as well as provide for their families in times of need. 
-               <br/><br/>
-               Accordingly, we will ensure that veterans seamlessly transit from active service to civilian society. We are poised to provide both short and long term supports that are delibrately designed to help ex-combatants and their dependents adjust to new emotional social and economic realities and the "silent injuries of war"
+                Dreamlife Africa is a change-oriented social enterprise promoting social development, economic stability, and the fulfillment of dreams across Africa.
+                <br/><br/>
+                We partner with churches, Christian ministries, community groups, and corporate entities to help people build skills, confidence, and sustainable livelihoods.
               </p>
 
               {/* CTA button */}
@@ -329,7 +304,7 @@ export default async function HomePage() {
                             border border-mil-green-800/30 group">
               <Image
                 src="/images/ghf_one.jpg"
-                alt="Green Heroes Foundation in action"
+                alt="Dreamlife Africa in action"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -351,7 +326,7 @@ export default async function HomePage() {
           5. PHOTO GALLERY
       ════════════════════════════════════════════════════════ */}
       <section
-        className="py-20 lg:py-28 bg-mil-black-800"
+        className="py-20 lg:py-28 bg-[#fbfbf7] border-b border-gold-500/100"
         aria-labelledby="gallery-heading"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -360,7 +335,7 @@ export default async function HomePage() {
             <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold-500 mb-2">
               In the Field
             </p>
-            <h2 id="gallery-heading" className="section-heading mb-0">
+            <h2 id="gallery-heading" className="section-heading mb-0 text-mil-black-800">
               Our Activities
             </h2>
             <span className="gold-divider mt-3 block" aria-hidden="true" />
@@ -368,63 +343,6 @@ export default async function HomePage() {
 
           {/* Clickable photo grid — opens lightbox on click */}
           <GalleryLightbox images={GALLERY_IMAGES} />
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════
-          5. LATEST BLOG POSTS (above footer, as required)
-      ════════════════════════════════════════════════════════ */}
-      <section
-        className="py-20 lg:py-28 bg-mil-black"
-        aria-labelledby="latest-posts-heading"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
-            <div>
-              <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold-500 mb-2">
-                News & Updates
-              </p>
-              <h2
-                id="latest-posts-heading"
-                className="section-heading mb-0"
-              >
-                Latest Posts
-              </h2>
-              <span className="gold-divider mt-3" aria-hidden="true" />
-            </div>
-            <Link
-              href="/blog"
-              className="btn-ghost self-start sm:self-auto group"
-            >
-              All Posts
-              <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200"
-                   fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
-                   aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-
-          {/* Blog cards grid */}
-          {latestPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {latestPosts.map((post, i) => (
-                <BlogCard
-                  key={post.slug}
-                  post={post}
-                  featured
-                  delayClass={`stagger-${i + 1}`}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-16 text-gray-500">
-              <p className="font-heading text-lg uppercase tracking-wide">
-                No posts published yet.
-              </p>
-            </div>
-          )}
         </div>
       </section>
 
@@ -451,29 +369,24 @@ export default async function HomePage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold-400 mb-4">
-            Join The Mission
+            Support The Work
           </p>
           <h2 className="font-heading font-bold text-4xl sm:text-5xl text-white
                          uppercase tracking-widest leading-tight mb-6">
-            Make a Difference{' '}
-            <span className="text-gold-400">Today</span>
+            Support The{' '}
+            <span className="text-gold-400">Dreamfund</span>
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-           There is no greater honor than to serve our country. Every day, we salute our heroes that have served our country. We have a responsibility to honor veterans for the sacrifices they made serving our country.
+            Dreamfund supports orphans, vulnerable children, women, youth, and pastors through scholarships and grants.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-primary text-base px-8 py-4">
-              Volunteer Now
+              Partner With Us
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 border border-white/30 text-white
-                         hover:border-white hover:bg-white/10 font-heading font-semibold
-                         uppercase tracking-wider text-base px-8 py-4 rounded
-                         transition-all duration-200"
-            >
-              Donate
-            </Link>
+            <DonateModal
+              triggerText="Support Dreamfund"
+              triggerClassName="inline-flex items-center justify-center gap-2 border border-white/30 text-white hover:border-white hover:bg-white/10 font-heading font-semibold uppercase tracking-wider text-base px-8 py-4 rounded transition-all duration-200"
+            />
           </div>
         </div>
       </section>

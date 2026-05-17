@@ -7,14 +7,14 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="pt-16 min-h-screen flex items-center justify-center bg-mil-black">
+    <div className="pt-24 min-h-screen flex items-center justify-center bg-mil-black">
       <div className="max-w-lg mx-auto px-4 sm:px-6 text-center py-20">
         {/* Round logo */}
         <div className="w-24 h-24 rounded-full border border-mil-green-700/30
                         flex items-center justify-center mx-auto mb-8 overflow-hidden">
           <Image
             src="/images/heroes (round).png"
-            alt="Green Heroes Foundation"
+            alt="Dreamlife Africa"
             width={96}
             height={96}
             className="object-cover w-full h-full"
@@ -28,7 +28,7 @@ export default function NotFound() {
         <span className="gold-divider mx-auto block mb-6" aria-hidden="true" />
         <p className="text-gray-400 text-sm leading-relaxed mb-8">
           The page you are looking for may have been moved, renamed, or does not exist.
-          Let&apos;s get you back on mission.
+          Let&apos;s get you back to Dreamlife Africa.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -67,7 +67,7 @@ export default async function BlogDetailPage({
   if (!post) notFound();
 
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       {/* ── Hero cover image ── */}
       <div className="relative h-64 sm:h-80 lg:h-[28rem] overflow-hidden bg-mil-black-800">
         <Image

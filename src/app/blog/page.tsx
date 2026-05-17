@@ -17,7 +17,7 @@ import Pagination from '@/components/Pagination';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'News, updates, mission reports, and stories from Green Heroes Foundation — supporting veterans and military families.',
+    'Stories, program updates, and community news from Dreamlife Africa.',
 };
 
 // ─── Inner content (reads searchParams) ──────────────────────────────────────
@@ -45,11 +45,11 @@ async function BlogPageContent({ searchParams }: BlogPageProps) {
             <path strokeLinecap="round" strokeLinejoin="round"
                   d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
           </svg>
-          <h2 className="font-heading text-2xl uppercase tracking-widest text-white mb-2">
+          <h2 className="font-heading text-2xl uppercase tracking-widest text-mil-black-800 mb-2">
             No Posts Yet
           </h2>
-          <p className="text-gray-400 text-sm">
-            Check back soon — new content is on the way.
+          <p className="text-neutral-600 text-sm">
+            Check back soon. New content is on the way.
           </p>
         </div>
       )}
@@ -110,28 +110,29 @@ function BlogGridSkeleton() {
 
 export default function BlogPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       {/* ── Page header ── */}
       <div className="bg-mil-black-800 border-b border-mil-green-800/30 py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold-500 mb-2">
             News & Updates
           </p>
-          <h1 className="section-heading mb-0">The Field Report</h1>
+          <h1 className="section-heading mb-0">Dreamlife Stories</h1>
           <span className="gold-divider mt-3 block" aria-hidden="true" />
           <p className="mt-5 text-gray-400 max-w-2xl leading-relaxed">
-            Mission updates, veteran stories, community outreach reports, and the latest from
-            Green Heroes Foundation — straight from the front lines of our work.
+            Program updates, community stories, and the latest from Dreamlife Africa.
           </p>
         </div>
       </div>
 
       {/* ── Posts ── */}
+      <section className="bg-[#fbfbf7] border-b border-gold-500/100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <Suspense fallback={<BlogGridSkeleton />}>
           <BlogPageContent searchParams={searchParams} />
         </Suspense>
       </div>
+      </section>
     </div>
   );
 }

@@ -19,14 +19,18 @@ import Image from 'next/image';
 export interface GalleryImage {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 }
 
 interface GalleryLightboxProps {
   images: GalleryImage[];
+  layout?: 'fixed' | 'adaptive';
 }
 
-export default function GalleryLightbox({ images }: GalleryLightboxProps) {
+export default function GalleryLightbox({ images, layout = 'fixed' }: GalleryLightboxProps) {
   const [selected, setSelected] = useState<number | null>(null);
+  const isAdaptive = layout === 'adaptive';
 
   const close = useCallback(() => setSelected(null), []);
 
@@ -59,26 +63,46 @@ export default function GalleryLightbox({ images }: GalleryLightboxProps) {
   return (
     <>
       {/* ── Photo grid ──────────────────────────────────────────────────────── */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+      <div
+        className={
+          isAdaptive
+            ? 'columns-1 sm:columns-2 lg:columns-3 gap-4'
+            : 'grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4'
+        }
+      >
         {images.map((img, i) => (
           <button
             key={img.src}
             onClick={() => setSelected(i)}
-            className="relative block overflow-hidden rounded-lg bg-mil-black-700
-                       border border-mil-green-800/20 group
-                       hover:border-gold-500/40 hover:shadow-xl hover:shadow-black/40
+            className={`relative block overflow-hidden rounded-lg group
                        transition-all duration-300 focus:outline-none
-                       focus-visible:ring-2 focus-visible:ring-gold-500"
-            style={{ aspectRatio: '4/3' }}
+                       focus-visible:ring-2 focus-visible:ring-gold-500
+                       ${
+                         isAdaptive
+                           ? 'mb-4 w-full break-inside-avoid bg-white border border-neutral-200 hover:border-gold-500/40 hover:shadow-xl hover:shadow-neutral-900/10'
+                           : 'bg-mil-black-700 border border-mil-green-800/20 hover:border-gold-500/40 hover:shadow-xl hover:shadow-black/40'
+                       }`}
+            style={isAdaptive ? undefined : { aspectRatio: '4/3' }}
             aria-label={`Open photo: ${img.alt}`}
           >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              sizes="(max-width: 768px) 50vw, 33vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+            {isAdaptive && img.width && img.height ? (
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={img.width}
+                height={img.height}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="h-auto w-full transition-transform duration-500 group-hover:scale-105"
+              />
+            ) : (
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 768px) 50vw, 33vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            )}
             {/* Hover overlay with zoom hint */}
             <div className="absolute inset-0 bg-mil-black/0 group-hover:bg-mil-black/30
                             transition-colors duration-300 flex items-center justify-center">

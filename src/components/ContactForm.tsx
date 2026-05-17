@@ -65,8 +65,7 @@ export default function ContactForm() {
           Message Received
         </h3>
         <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-6">
-          Thank you for reaching out. A member of our team will get back to you within
-          2 business days.
+          Thank you for reaching out. Our team will respond during office hours.
         </p>
         <button onClick={() => setStatus('idle')} className="btn-outline text-xs">
           Send Another Message
@@ -91,7 +90,7 @@ export default function ContactForm() {
           </label>
           <input
             id="firstName" name="firstName" type="text" required autoComplete="given-name"
-            placeholder="John"
+            placeholder="Your first name"
             className="w-full bg-mil-black-800 border border-mil-green-800/40 rounded
                        px-4 py-3 text-sm text-white placeholder-gray-600
                        focus:outline-none focus:border-gold-500/60 focus:ring-1 focus:ring-gold-500/30
@@ -105,7 +104,7 @@ export default function ContactForm() {
           </label>
           <input
             id="lastName" name="lastName" type="text" required autoComplete="family-name"
-            placeholder="Doe"
+            placeholder="Your last name"
             className="w-full bg-mil-black-800 border border-mil-green-800/40 rounded
                        px-4 py-3 text-sm text-white placeholder-gray-600
                        focus:outline-none focus:border-gold-500/60 focus:ring-1 focus:ring-gold-500/30
@@ -139,7 +138,7 @@ export default function ContactForm() {
         </label>
         <input
           id="phone" name="phone" type="tel" autoComplete="tel"
-          placeholder="+1 (555) 000-0000"
+          placeholder="+254 700 000 000"
           className="w-full bg-mil-black-800 border border-mil-green-800/40 rounded
                      px-4 py-3 text-sm text-white placeholder-gray-600
                      focus:outline-none focus:border-gold-500/60 focus:ring-1 focus:ring-gold-500/30
@@ -161,12 +160,13 @@ export default function ContactForm() {
                      focus:outline-none focus:border-gold-500/60 focus:ring-1 focus:ring-gold-500/30
                      transition-colors duration-200 appearance-none cursor-pointer"
         >
-          <option value="" disabled>Select a subject…</option>
-          <option value="volunteer">Volunteer Inquiry</option>
-          <option value="donate">Donation / Fundraising</option>
-          <option value="veteran-support">Request Veteran Support</option>
+          <option value="" disabled>Select a subject...</option>
+          <option value="education-scholarships">Education Scholarships</option>
+          <option value="youth-mentorship">Youth Mentorship</option>
+          <option value="leadership-development">Leadership Development</option>
+          <option value="women-development">Women Development</option>
+          <option value="dreamfund">Dreamfund</option>
           <option value="partnership">Partnership Opportunity</option>
-          <option value="media">Media &amp; Press</option>
           <option value="other">Other</option>
         </select>
       </div>
@@ -179,7 +179,7 @@ export default function ContactForm() {
         </label>
         <textarea
           id="message" name="message" required rows={6}
-          placeholder="Tell us how we can help…"
+          placeholder="Tell us how we can help or partner with you..."
           className="w-full bg-mil-black-800 border border-mil-green-800/40 rounded
                      px-4 py-3 text-sm text-white placeholder-gray-600 resize-none
                      focus:outline-none focus:border-gold-500/60 focus:ring-1 focus:ring-gold-500/30
@@ -209,7 +209,7 @@ export default function ContactForm() {
               <path className="opacity-75" fill="currentColor"
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
             </svg>
-            Sending…
+            Sending...
           </>
         ) : (
           'Send Message'

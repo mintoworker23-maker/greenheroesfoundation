@@ -11,25 +11,25 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Green Heroes Foundation — our mission, history, values, and the leadership team driving change for veterans and military families.',
+    'Learn about Dreamlife Africa, our mission, vision, mandate, programs, and leadership.',
 };
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const CORE_VALUES = [
   {
-    label: 'VISION STATEMENT',
-    description: 'Our vision is to see war veterans get a seamless reintegration into the civil society and provide adequate care and shelter for the homeless.',
+    label: 'VISION',
+    description: 'We envision an outstanding social enterprise that promotes social development, economic stability and fulfillment of dreams on the African continent and beyond.',
     icon: '⚔️',
   },
   {
-    label: 'MISSION STATEMENT',
-    description: 'Green Heroes Foundation is dedicated to leveraging the nation’s full spectrum of resources to ensure all members of our military, war veterans and their families receive the support they need and have earned.',
+    label: 'MISSION',
+    description: 'We exist to increase the hopes and aspirations of people through shaping mindsets, inspiring dreams and fulfilling destinies.',
     icon: '🎖️',
   },
   {
-    label: 'OUR GOAL',
-    description: 'Our goal is to create awareness on the travails of the men (male/female) in uniform who are constantly exposed to threats and dangers during and after active service.',
+    label: 'MANDATE',
+    description: 'Restoring quality of life, dignity and honor to all people through holistic transformation.',
     icon: '🤝',
   },
   // {
@@ -41,37 +41,55 @@ const CORE_VALUES = [
 
 const LEADERSHIP = [
   {
-    name: 'Gen Ibrahim Babangida (RTD)',
-    role: 'Patron',
+    name: 'Willson Mugai',
+    role: 'Chief Executive Officer',
     bio: '',
     image: '/images/Patron.jpg',
   },
   {
-    name: 'AVM Audu Bida (RTD)',
-    role: 'Chairman',
+    name: 'Anne Mugai',
+    role: 'Executive Director',
     bio: '',
     image: '/images/Bida.jpg',
   },
   {
-    name: 'Air Cdre A.A Balogun (RTD)',
-    role: 'Founder',
+    name: 'Einstein Macarthur',
+    role: 'Non-Executive Director',
     bio: '',
     image: '/images/Balogun.jpg',
   },
+  {
+    name: 'Dorothy Robinson',
+    role: 'Non-Executive Director',
+    bio: '',
+    image: '/images/JohnDoe.jpg',
+  },
+  {
+    name: 'Dr Smith Robinson',
+    role: 'Non-Executive Director',
+    bio: '',
+    image: '/images/JohnDoe.jpg',
+  },
+  {
+    name: 'Brandon Woodluck',
+    role: 'Non-Executive Director',
+    bio: '',
+    image: '/images/JohnDoe.jpg',
+  }
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function AboutPage() {
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       {/* ── Page header ── */}
       <div className="bg-mil-black-800 border-b border-mil-green-800/30 py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold-500 mb-2">
             Who We Are
           </p>
-          <h1 className="section-heading mb-0">About Us</h1>
+          <h1 className="section-heading mb-0">About Dreamlife Africa</h1>
           <span className="gold-divider mt-3 block" aria-hidden="true" />
         </div>
       </div>
@@ -89,12 +107,13 @@ export default function AboutPage() {
                 id="mission-heading"
                 className="section-heading mb-3"
               >
-                HELPING VETERANS, COMMUNITIES, AND THOSE SERVING IN HARM'S WAY.
+                TRANSFORMING LIVES AND DESTINIES ACROSS AFRICA.
               </h2>
               <span className="gold-divider mb-6 block" aria-hidden="true" />
               <p className="text-gray-300 leading-relaxed text-base mb-4">
-               Green Heroes Foundation initiative which is composed mainly of retired military officers is designed to support and care for war veterans and their dependents. Our goal is to create awereness on the travails of the men (male/female) in uniform who are constantly exposed to threats and dangers during and after active service. Due to the enormity of this problem, leaving it to the Armed Forces of Nigeria to treat acute and chronic medical needs, provide rehabilitation service and finally help them gain and maintain useful employment will never be sufficient. That is why we believe that these efforts must be complimented by well-meaning Nigerians and Corporate Organizations. <br/><br/>
-               Green Heroes Foundation intends to show the way by providing some of the much needed support outside the scope and resources of the Armed Forces of Nigeria. Consequently, we commenced full operations in February 2018 with few of the war veterans that we could cater for due to financial contraints. They are currently being catered for at our temporary hostel located inside Jazz and Blues Garden at Abidjan Street, Wuse Zone 3, in Abuja. There are several of them within our cities and villages living on the fringes of the society they once served to protect and defend. We believe that it is our obligation to cater for those who might have borne the battles and there families who suffered from the pains which became their gains while protecting us all.
+                Dreamlife Africa is a change-oriented social enterprise created to promote social development, economic stability, and the fulfillment of dreams across Africa.
+                <br/><br/>
+                We partner with churches, Christian ministries, community-based organizations, and corporate entities to empower communities through practical social and economic programs.
               </p>
              
               <Link href="/contact" className="btn-primary">
@@ -106,7 +125,7 @@ export default function AboutPage() {
             <div className="relative h-80 lg:h-[420px] rounded-lg overflow-hidden border border-mil-green-800/30">
               <Image
                 src="/images/ghh.jpg"
-                alt="Veterans gathered for community event"
+                alt="Dreamlife Africa community program"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -118,7 +137,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Two-column text block ── */}
-      <section className="py-20 bg-mil-black-800" aria-labelledby="twocol-heading">
+      <section className="py-20 bg-[#fbfbf7] border-b border-gold-500/100" aria-labelledby="twocol-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
 
@@ -129,43 +148,38 @@ export default function AboutPage() {
               </p>
               <h2
                 id="twocol-heading"
-                className="section-heading mb-3"
+                className="section-heading mb-3 text-mil-black-800"
               >
-                OBJECTIVES
+                FOURFOLD OBJECTIVES
               </h2>
               <span className="gold-divider block mb-6" aria-hidden="true" />
-              <p className="text-gray-400 text-sm leading-relaxed">
-                To promote research studies on post war conditions and understanding to both serving and retired veterans.
-              <br/>
-              To provide medical counseling and assessment of war veterans
-              <br/>
-              To promote the understanding of veteran welfare and integration.
-              <br/>
-              Rehabilitation skill acquisition and empowerment needs
-              <br/>
-              To carry out advocacy, public enlightment and the effects; as a way of promoting peaceful coexistence in Nigerian.
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                Encouraging communities by giving hope to vulnerable people and helping support groups meet basic needs.
+                <br/>
+                Educating deserving young people through primary, secondary, and college scholarships.
+                <br/>
+                Empowering leaders through workshops, training, and seminars.
+                <br/>
+                Establishing stronger communities through mentorship, small grants, and talent support.
               </p>
             </div>
 
             {/* Right — body text columns */}
             {/* Replace or extend these paragraphs with your own content */}
-            <div className="space-y-5 text-sm text-gray-400 leading-relaxed">
-              <p>Employment opportunities for war veterans as the foundation's activities would be manned and coordinated by veterans across the country.
+            <div className="space-y-5 text-sm text-neutral-600 leading-relaxed">
+              <p>
+                Dreamlife Africa has partnered with colleges to provide scholarships for deserving students pursuing their careers.
                 <br/><br/>
-                Skill acquisation and empowerment programs to ensure full rehabilitation and self-sufficiency of the veterans.
+                It has also worked with primary and secondary schools to support learners who need help staying in school.
               </p>
               <p>
-               Provision of improved health care services through the establishments of dedicated Hospitals and Clinics for veterans and their dependents.
+                Through youth and talent support, Dreamlife Africa has helped young people access grants, mentorship, and creative opportunities.
               </p>
               <p>
-               Improved welfare package for veterans through targeted advocacy to secure reasonable discounts and rebates in both public and private enterprises.
-                <br/> <br/>
-                Total entrance of vets into the society with the desired appreciation.
+                Through Boresha Maisha, the organization supports women with training, encouragement, and small business grants.
               </p>
               <p>
-               Enhancement of peace and the security of Nigeria through the proper retooling, reorientation and rehabilitation of war veterans.
-                <br/><br/>
-                After proper rehabilitation the Vets could be engaged by relevant Government Agencies for disaster management duties amongst others.
+                Through leadership development, Dreamlife Africa equips pastors, counselors, Christian workers, and community leaders for greater impact.
               </p>
             </div>
 
@@ -174,13 +188,13 @@ export default function AboutPage() {
       </section>
 
       {/* ── Core values ── */}
-      <section className="py-20 bg-mil-black-800" aria-labelledby="values-heading">
+      <section className="py-20 bg-white border-b border-gold-500/100" aria-labelledby="values-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold-500 mb-2">
               What Drives Us
             </p>
-            <h2 id="values-heading" className="section-heading mb-0">Core Values</h2>
+            <h2 id="values-heading" className="section-heading mb-0 text-mil-black-800">Vision, Mission and Mandate</h2>
             <span className="gold-divider mt-3 mx-auto block" aria-hidden="true" />
           </div>
 
@@ -188,15 +202,15 @@ export default function AboutPage() {
             {CORE_VALUES.map(({ label, description }) => (
               <div
                 key={label}
-                className="bg-mil-black-700 border border-mil-green-800/30 rounded-lg p-6
-                           hover:border-gold-500/30 hover:-translate-y-1 transition-all duration-300"
+                className="bg-[#fbfbf7] border border-neutral-200 rounded-lg p-6
+                           hover:border-gold-500/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-neutral-900/10 transition-all duration-300"
               >
                 {/* Accent bar */}
                 <span className="block w-10 h-1 bg-gold-500 rounded-full mb-4" aria-hidden="true" />
-                <h3 className="font-heading font-bold text-white uppercase tracking-widest text-base mb-3">
+                <h3 className="font-heading font-bold text-mil-black-800 uppercase tracking-widest text-base mb-3">
                   {label}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+                <p className="text-neutral-600 text-sm leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
@@ -213,7 +227,7 @@ export default function AboutPage() {
             <h2 id="leadership-heading" className="section-heading mb-0">Leadership</h2>
             <span className="gold-divider mt-3 mx-auto block" aria-hidden="true" />
             <p className="mt-5 text-gray-400 max-w-xl mx-auto text-sm leading-relaxed">
-              Our leadership team brings decades of combined military service and non-profit experience.
+              Dreamlife Africa is guided by an executive board responsible for strategy, operations, policy, resource mobilization, and accountability.
             </p>
           </div>
 
@@ -260,8 +274,7 @@ export default function AboutPage() {
             Want to Partner With Us?
           </h2>
           <p className="text-gray-300 mb-8 leading-relaxed">
-            We welcome partnerships with businesses, government agencies, and other non-profits
-            who share our commitment to veterans and military families.
+            We welcome churches, ministries, community groups, companies, friends, and partners who want to expand hope, opportunity, and dignity across Africa.
           </p>
           <Link href="/contact" className="btn-primary">
             Contact Us
