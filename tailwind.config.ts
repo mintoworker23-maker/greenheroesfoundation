@@ -9,42 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Military green palette
+        // Deep blue palette
         'mil-green': {
-          50:  '#f0f4f0',
-          100: '#d6e4d6',
-          200: '#adc9ad',
-          300: '#7eaa7e',
-          400: '#538c53',
-          500: '#2d6b2d',
-          600: '#1e5220',
-          700: '#163d18',
-          800: '#0f2a10',
-          900: '#081808',
-          950: '#040c04',
+          50:  '#eef5fb',
+          100: '#d7e8f5',
+          200: '#afd0e8',
+          300: '#80afd4',
+          400: '#518abd',
+          500: '#1f4e79',
+          600: '#1b456c',
+          700: '#173b5d',
+          800: '#102b44',
+          900: '#0a1c2e',
+          950: '#06111d',
         },
-        // Gold accent palette
+        // Brick red accent palette
         gold: {
-          300: '#e8cf7e',
-          400: '#d4b84a',
-          500: '#c9a84c',
-          600: '#b8962e',
-          700: '#9a7c22',
+          300: '#e58b78',
+          400: '#d9634f',
+          500: '#c44a3a',
+          600: '#a93c30',
+          700: '#843025',
         },
-        // Near-black backgrounds
+        // Charcoal backgrounds
         'mil-black': {
-          DEFAULT: '#080c08',
-          800: '#0f160f',
-          700: '#151f15',
-          600: '#1a271a',
+          DEFAULT: '#11151b',
+          800: '#20242a',
+          700: '#272d35',
+          600: '#303740',
         },
       },
       fontFamily: {
         heading: ['var(--font-oswald)', 'sans-serif'],
         body: ['var(--font-opensans)', 'sans-serif'],
-      },
-      backgroundImage: {
-        'hero-pattern': "url('/images/hero-bg.jpg')",
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',

@@ -44,37 +44,37 @@ const LEADERSHIP = [
     name: 'Willson Mugai',
     role: 'Chief Executive Officer',
     bio: '',
-    image: '/images/Patron.jpg',
+    image: '/images/dreamlife-doc/image5.webp',
   },
   {
     name: 'Anne Mugai',
     role: 'Executive Director',
     bio: '',
-    image: '/images/Bida.jpg',
+    image: '/images/dreamlife-doc/image6.webp',
   },
   {
     name: 'Einstein Macarthur',
     role: 'Non-Executive Director',
     bio: '',
-    image: '/images/Balogun.jpg',
+    image: '/images/dreamlife-doc/image7.webp',
   },
   {
     name: 'Dorothy Robinson',
     role: 'Non-Executive Director',
     bio: '',
-    image: '/images/JohnDoe.jpg',
+    image: '/images/dreamlife-doc/image8.webp',
   },
   {
     name: 'Dr Smith Robinson',
     role: 'Non-Executive Director',
     bio: '',
-    image: '/images/JohnDoe.jpg',
+    image: '/images/dreamlife-doc/image9.webp',
   },
   {
     name: 'Brandon Woodluck',
     role: 'Non-Executive Director',
     bio: '',
-    image: '/images/JohnDoe.jpg',
+    image: '/images/dreamlife-doc/image10.webp',
   }
 ];
 
@@ -124,7 +124,7 @@ export default function AboutPage() {
             {/* Image */}
             <div className="relative h-80 lg:h-[420px] rounded-lg overflow-hidden border border-mil-green-800/30">
               <Image
-                src="/images/ghh.jpg"
+                src="/images/dreamlife-doc/image1.webp"
                 alt="Dreamlife Africa community program"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

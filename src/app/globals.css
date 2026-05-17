@@ -128,14 +128,13 @@
   }
 }
 
-/* ── Military camouflage texture ── */
+/* ── Low-contrast image texture ── */
 /*
-  A 300×300 SVG tile of irregular polygons in dark-olive, military-green,
-  and near-black — the classic woodland/digital camo palette.
-  Used as an overlay on the hero section.
+  A 300x300 SVG tile of irregular polygons in deep blue and charcoal.
+  Used as a subtle overlay on the hero section.
 */
 .camo-texture {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%232b3820'/%3E%3Cpolygon points='0,0 75,0 55,50 5,65' fill='%23182310'/%3E%3Cpolygon points='85,0 150,0 165,40 130,70 80,55' fill='%233d5228'/%3E%3Cpolygon points='160,0 230,0 245,55 200,80 145,50' fill='%23182310'/%3E%3Cpolygon points='240,0 300,0 300,55 265,70' fill='%233d5228'/%3E%3Cpolygon points='0,70 55,50 75,95 45,135 0,120' fill='%234a5c30'/%3E%3Cpolygon points='85,55 145,50 170,95 145,140 90,120 70,85' fill='%23182310'/%3E%3Cpolygon points='200,80 265,70 285,120 250,160 195,135 180,100' fill='%234a5c30'/%3E%3Cpolygon points='0,135 45,125 65,170 30,210 0,200' fill='%233d5228'/%3E%3Cpolygon points='90,120 150,130 175,180 140,220 85,200 70,165' fill='%233d5228'/%3E%3Cpolygon points='255,155 295,135 300,200 270,220' fill='%23182310'/%3E%3Cpolygon points='0,215 30,205 55,255 20,290 0,275' fill='%23182310'/%3E%3Cpolygon points='80,205 145,215 165,270 125,300 70,285' fill='%234a5c30'/%3E%3Cpolygon points='165,240 260,230 285,280 240,300 155,300' fill='%23182310'/%3E%3Cpolygon points='280,230 300,215 300,285 275,290' fill='%233d5228'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%231f4e79'/%3E%3Cpolygon points='0,0 75,0 55,50 5,65' fill='%2311151b'/%3E%3Cpolygon points='85,0 150,0 165,40 130,70 80,55' fill='%23173b5d'/%3E%3Cpolygon points='160,0 230,0 245,55 200,80 145,50' fill='%2311151b'/%3E%3Cpolygon points='240,0 300,0 300,55 265,70' fill='%23173b5d'/%3E%3Cpolygon points='0,70 55,50 75,95 45,135 0,120' fill='%23102b44'/%3E%3Cpolygon points='85,55 145,50 170,95 145,140 90,120 70,85' fill='%2311151b'/%3E%3Cpolygon points='200,80 265,70 285,120 250,160 195,135 180,100' fill='%23102b44'/%3E%3Cpolygon points='0,135 45,125 65,170 30,210 0,200' fill='%23173b5d'/%3E%3Cpolygon points='90,120 150,130 175,180 140,220 85,200 70,165' fill='%23173b5d'/%3E%3Cpolygon points='255,155 295,135 300,200 270,220' fill='%2311151b'/%3E%3Cpolygon points='0,215 30,205 55,255 20,290 0,275' fill='%2311151b'/%3E%3Cpolygon points='80,205 145,215 165,270 125,300 70,285' fill='%23102b44'/%3E%3Cpolygon points='165,240 260,230 285,280 240,300 155,300' fill='%2311151b'/%3E%3Cpolygon points='280,230 300,215 300,285 275,290' fill='%23173b5d'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 300px 300px;
 }

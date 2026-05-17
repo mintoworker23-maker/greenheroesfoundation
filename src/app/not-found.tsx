@@ -13,7 +13,7 @@ export default function NotFound() {
         <div className="w-24 h-24 rounded-full border border-mil-green-700/30
                         flex items-center justify-center mx-auto mb-8 overflow-hidden">
           <Image
-            src="/images/heroes (round).png"
+            src="/images/logo.webp"
             alt="Dreamlife Africa"
             width={96}
             height={96}

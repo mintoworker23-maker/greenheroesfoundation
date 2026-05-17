@@ -10,6 +10,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import DonateModal from '@/components/DonateModal';
 
 
 const NAV_LINKS = [
@@ -86,7 +87,7 @@ export default function Navbar() {
             aria-label="Dreamlife Africa Home"
           >
             <Image
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Dreamlife Africa"
               width={100}
               height={100}
@@ -130,9 +131,7 @@ export default function Navbar() {
 
           {/* ── Desktop CTA ── */}
           <div className="hidden md:block">
-            <Link href="/contact" className="btn-primary text-xs">
-              Get Involved
-            </Link>
+            <DonateModal triggerText="Get Involved" triggerClassName="btn-primary text-xs" />
           </div>
 
           {/* ── Mobile hamburger ── */}
@@ -180,7 +179,7 @@ export default function Navbar() {
                                 text-sm rounded transition-colors duration-200
                                 ${
                                   isActive
-                                    ? 'text-mil-black-800 bg-green-500/10'
+                                    ? 'text-mil-black-800 bg-mil-green-500/10'
                                     : 'text-neutral-700 hover:text-neutral-950 hover:bg-neutral-100'
                                 }`}
                     aria-current={isActive ? 'page' : undefined}
@@ -191,9 +190,11 @@ export default function Navbar() {
               );
             })}
             <li className="pt-2 px-4">
-              <Link href="/contact" className="btn-primary w-full justify-center text-xs">
-                Partner With Us
-              </Link>
+              <DonateModal
+                triggerText="Get Involved"
+                triggerClassName="btn-primary w-full justify-center text-xs"
+                onOpen={() => setMenuOpen(false)}
+              />
             </li>
           </ul>
         </div>

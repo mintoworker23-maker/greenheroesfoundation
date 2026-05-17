@@ -27,17 +27,17 @@ export const metadata: Metadata = {
 
 // ─── Static data ─────────────────────────────────────────────────────────────
 
-// ── Gallery images (from /public/images) ─────────────────────────────────────
+// ── Gallery images (from /public/images/dreamlife-doc) ───────────────────────
 const GALLERY_IMAGES = [
-  { src: '/images/ghf_one.jpg',   alt: 'Dreamlife Africa community program', tall: false },
-  { src: '/images/ghf_two.jpg',   alt: 'Dreamlife Africa field outreach',    tall: false },
-  { src: '/images/ghf_three.jpg', alt: 'Dreamlife Africa mentorship session', tall: false },
-  { src: '/images/ghf_four.jpg',  alt: 'Dreamlife Africa team in action',     tall: false },
-  { src: '/images/ghf_five.jpg',  alt: 'Dreamlife Africa education support',  tall: false },
-  { src: '/images/ghf_six.jpg',   alt: 'Dreamlife Africa community gathering', tall: false },
-  { src: '/images/ghf_seven.jpg', alt: 'Dreamlife Africa program activity',    tall: false },
-  { src: '/images/ghf_eight.jpg', alt: 'Dreamlife Africa outreach activity',   tall: false },
-  { src: '/images/ghf_nine.jpg',  alt: 'Dreamlife Africa youth support',       tall: false },
+  { src: '/images/dreamlife-doc/image3.webp', alt: 'Dreamlife Africa leadership summit' },
+  { src: '/images/dreamlife-doc/image12.webp', alt: 'Dreamlife Africa college mission' },
+  { src: '/images/dreamlife-doc/image1.webp', alt: 'Dreamlife Africa sponsored students' },
+  { src: '/images/dreamlife-doc/image4.webp', alt: 'Dreamlife Africa women empowerment session' },
+  { src: '/images/dreamlife-doc/image16.webp', alt: 'Dreamlife Africa business support' },
+  { src: '/images/dreamlife-doc/image18.webp', alt: 'Dreamlife Africa artiste support' },
+  { src: '/images/dreamlife-doc/image23.webp', alt: 'Dreamlife Africa women workshop' },
+  { src: '/images/dreamlife-doc/image27.webp', alt: 'Dreamlife Africa mentorship camp' },
+  { src: '/images/dreamlife-doc/image31.webp', alt: 'Dreamlife Africa women training' },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -157,9 +157,10 @@ export default async function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-            <Link href="/about" className="btn-outline text-base px-8 py-4">
-              Our Mission
-            </Link>
+            <DonateModal
+              triggerText="Get Involved"
+              triggerClassName="btn-outline text-base px-8 py-4"
+            />
           </div>
         </div>
 
@@ -303,8 +304,8 @@ export default async function HomePage() {
             <div className="relative h-80 lg:h-[520px] rounded-lg overflow-hidden
                             border border-mil-green-800/30 group">
               <Image
-                src="/images/ghf_one.jpg"
-                alt="Dreamlife Africa in action"
+                src="/images/dreamlife-doc/image16.webp"
+                alt="Dreamlife Africa business support presentation"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

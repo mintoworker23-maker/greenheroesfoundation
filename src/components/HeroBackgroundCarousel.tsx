@@ -4,11 +4,10 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const HERO_IMAGES = [
-  '/images/ghf_one.jpg',
-  '/images/ghf_two.jpg',
-  '/images/ghf_four.jpg',
-  '/images/ghf_six.jpg',
-  '/images/ghf_eight.jpg',
+  '/images/dreamlife-doc/image1.webp',
+  '/images/dreamlife-doc/image2.webp',
+  '/images/dreamlife-doc/image3.webp',
+  '/images/dreamlife-doc/image4.webp',
 ];
 
 export default function HeroBackgroundCarousel() {

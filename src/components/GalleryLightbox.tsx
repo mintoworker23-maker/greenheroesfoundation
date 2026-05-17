@@ -72,7 +72,7 @@ export default function GalleryLightbox({ images, layout = 'fixed' }: GalleryLig
       >
         {images.map((img, i) => (
           <button
-            key={img.src}
+            key={`${img.src}-${i}`}
             onClick={() => setSelected(i)}
             className={`relative block overflow-hidden rounded-lg group
                        transition-all duration-300 focus:outline-none

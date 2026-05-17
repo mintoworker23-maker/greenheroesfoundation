@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 const PAYMENT_DETAILS = [
   { label: 'Account Name', value: 'Dreamlife Africa' },
@@ -17,13 +18,20 @@ const CONTACT_DETAILS = [
 interface DonateModalProps {
   triggerText?: string;
   triggerClassName?: string;
+  onOpen?: () => void;
 }
 
 export default function DonateModal({
   triggerText = 'Donate',
   triggerClassName = 'btn-primary',
+  onOpen,
 }: DonateModalProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    onOpen?.();
+    setIsOpen(true);
+  };
 
   useEffect(() => {
     if (!isOpen) return;
@@ -43,11 +51,11 @@ export default function DonateModal({
 
   return (
     <>
-      <button type="button" onClick={() => setIsOpen(true)} className={triggerClassName}>
+      <button type="button" onClick={openModal} className={triggerClassName}>
         {triggerText}
       </button>
 
-      {isOpen && (
+      {isOpen && createPortal(
         <div
           className="fixed inset-0 z-[70] flex items-center justify-center bg-mil-black/80 px-4 py-8 backdrop-blur-sm"
           role="dialog"
@@ -102,7 +110,7 @@ export default function DonateModal({
 
               <div>
                 <h3 className="font-heading text-sm font-bold uppercase tracking-widest text-mil-black-800 mb-3">
-                  Send Confirmation
+                  Contact us about your donation
                 </h3>
                 <div className="space-y-2 text-sm text-neutral-600">
                   {CONTACT_DETAILS.map(({ label, value, href }) => (
@@ -121,12 +129,10 @@ export default function DonateModal({
               <button type="button" onClick={() => setIsOpen(false)} className="btn-outline justify-center text-xs">
                 Close
               </button>
-              <a href="mailto:info@dreamlifeafrica.co.ke" className="btn-primary justify-center text-xs">
-                Email Confirmation
-              </a>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

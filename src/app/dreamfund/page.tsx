@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import DonateModal from '@/components/DonateModal';
 
@@ -44,17 +45,28 @@ export default function DreamfundPage() {
 
       <section className="bg-[#fbfbf7] border-b border-gold-500/100 py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold-500 mb-2">
                 What It Is
               </p>
               <h2 className="section-heading text-mil-black-800 mb-3">A Pool For Practical Support</h2>
               <span className="gold-divider block mb-6" aria-hidden="true" />
+              <p className="text-neutral-600 leading-relaxed max-w-2xl">
+                Dreamfund is managed by Dreamlife Africa. It brings together one-time and recurring gifts from friends, partners, organizations, charities, and companies to support vulnerable children, women, youth, and pastors.
+              </p>
             </div>
-            <p className="text-neutral-600 leading-relaxed max-w-2xl">
-              Dreamfund is managed by Dreamlife Africa. It brings together one-time and recurring gifts from friends, partners, organizations, charities, and companies to support vulnerable children, women, youth, and pastors.
-            </p>
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative h-52 w-full max-w-sm overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm">
+                <Image
+                  src="/images/dreamlife-doc/image11.webp"
+                  alt="Dreamfund"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 24rem"
+                  className="object-contain p-6"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
