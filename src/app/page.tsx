@@ -37,7 +37,7 @@ const GALLERY_IMAGES = [
   { src: '/images/dreamlife-doc/image18.webp', alt: 'Dreamlife Africa artiste support' },
   { src: '/images/dreamlife-doc/image23.webp', alt: 'Dreamlife Africa women workshop' },
   { src: '/images/dreamlife-doc/image27.webp', alt: 'Dreamlife Africa mentorship camp' },
-  { src: '/images/dreamlife-doc/image31.webp', alt: 'Dreamlife Africa women training' },
+  { src: '/images/dreamlife-doc/image31.webp', alt: 'Dreamlife Africa women capacity building' },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -95,7 +95,7 @@ const PROGRAMS = [
     ),
     title: 'LEADERSHIP AND WOMEN EMPOWERMENT',
     description:
-      'Leadership training for community and church leaders, plus Boresha Maisha support for women building small businesses.',
+      'Leadership capacity building for community and church leaders, plus Boresha Maisha support for women building small businesses.',
   },
 ];
 

@@ -33,7 +33,7 @@ const GALLERY_IMAGES = [
   { src: '/images/dreamlife-doc/image25.webp', alt: 'Dreamlife Africa leaders summit presentation', width: 450, height: 313 },
   { src: '/images/dreamlife-doc/image29.webp', alt: 'Dreamlife Africa leadership workshop', width: 392, height: 324 },
   { src: '/images/dreamlife-doc/image30.webp', alt: 'Dreamlife Africa youth support', width: 415, height: 287 },
-  { src: '/images/dreamlife-doc/image31.webp', alt: 'Dreamlife Africa women training', width: 720, height: 501 },
+  { src: '/images/dreamlife-doc/image31.webp', alt: 'Dreamlife Africa women capacity building', width: 720, height: 501 },
   { src: '/images/dreamlife-doc/image32.webp', alt: 'Dreamlife Africa dance group support', width: 425, height: 328 },
   { src: '/images/dreamlife-doc/image33.webp', alt: 'Dreamlife Africa college bursary', width: 720, height: 480 },
   { src: '/images/dreamlife-doc/image34.webp', alt: 'Dreamlife Africa secondary bursaries', width: 420, height: 323 },

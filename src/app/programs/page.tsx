@@ -43,11 +43,11 @@ const PROGRAMS: ProgramAccordionItem[] = [
   {
     label: '03',
     title: 'Leadership Development',
-    summary: 'Computer literacy and leadership training for schools, churches, and communities.',
+    summary: 'Computer literacy and leadership development for schools, churches, and communities.',
     details: [
       {
         heading: 'COMPLIT',
-        body: 'COMPLIT brings computer literacy to pupils and students, and trains teachers to use technology in learning.',
+        body: 'COMPLIT brings computer literacy to pupils and students, and equips teachers to use technology in learning.',
       },
       {
         heading: 'DALI',
@@ -62,7 +62,7 @@ const PROGRAMS: ProgramAccordionItem[] = [
     details: [
       {
         heading: 'Boresha Maisha',
-        body: 'Boresha Maisha means Improve Life. It supports leadership, enterprise, skills training, and psychological care.',
+        body: 'Boresha Maisha means Improve Life. It supports leadership, enterprise development, and psychological care.',
       },
       {
         heading: 'Small Grants',
@@ -75,7 +75,7 @@ const PROGRAMS: ProgramAccordionItem[] = [
 const OBJECTIVES = [
   'Encourage vulnerable communities with practical hope.',
   'Educate deserving learners through scholarships.',
-  'Empower leaders with training that strengthens service.',
+  'Empower leaders with capacity building that strengthens service.',
   'Establish stronger communities through mentorship, grants, and talent support.',
 ];
 

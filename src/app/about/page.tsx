@@ -153,15 +153,12 @@ export default function AboutPage() {
                 FOURFOLD OBJECTIVES
               </h2>
               <span className="gold-divider block mb-6" aria-hidden="true" />
-              <p className="text-neutral-600 text-sm leading-relaxed">
-                Encouraging communities by giving hope to vulnerable people and helping support groups meet basic needs.
-                <br/>
-                Educating deserving young people through primary, secondary, and college scholarships.
-                <br/>
-                Empowering leaders through workshops, training, and seminars.
-                <br/>
-                Establishing stronger communities through mentorship, small grants, and talent support.
-              </p>
+              <ul className="text-neutral-600 text-sm leading-relaxed">
+                <li><b>Encouraging</b> communities by giving hope to vulnerable people and helping support groups meet basic needs.</li>
+                <li><b>Educating</b> deserving young people through primary, secondary, and college scholarships.</li>
+                <li><b>Empowering</b> leaders through workshops, capacity building, and seminars.</li>
+                <li><b>Establishing</b> stronger communities through mentorship, small grants, and talent support.</li>
+              </ul>
             </div>
 
             {/* Right — body text columns */}
@@ -176,7 +173,7 @@ export default function AboutPage() {
                 Through youth and talent support, Dreamlife Africa has helped young people access grants, mentorship, and creative opportunities.
               </p>
               <p>
-                Through Boresha Maisha, the organization supports women with training, encouragement, and small business grants.
+                Through Boresha Maisha, the organization supports women with capacity building, encouragement, and small business grants.
               </p>
               <p>
                 Through leadership development, Dreamlife Africa equips pastors, counselors, Christian workers, and community leaders for greater impact.

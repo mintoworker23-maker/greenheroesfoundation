@@ -177,7 +177,7 @@ export default function Footer() {
       <div className="border-t border-neutral-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4
                         flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-neutral-500">
-          <p>© {currentYear} Dreamlife Africa. All rights reserved.</p>
+          <p>© 2024 Dreamlife Africa. All rights reserved.</p>
           <p>
             Website by <a href="https://www.tcmedia.co.ke" className="hover:text-mil-black-800 transition-colors duration-200">TCMedia </a> &middot;
             <Link href="/contact" className="hover:text-mil-black-800 transition-colors duration-200">
