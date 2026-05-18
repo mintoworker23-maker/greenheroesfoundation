@@ -110,30 +110,30 @@ export default async function HomePage() {
           1. HERO
       ════════════════════════════════════════════════════════ */}
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative flex min-h-[76svh] items-center justify-center overflow-hidden sm:min-h-screen"
         aria-label="Hero section"
       >
         <HeroBackgroundCarousel />
 
         {/* Decorative corner accents */}
-        <div className="absolute top-24 left-8 w-16 h-16 border-t-2 border-l-2 border-gold-500/30 z-10" aria-hidden="true" />
-        <div className="absolute top-24 right-8 w-16 h-16 border-t-2 border-r-2 border-gold-500/30 z-10" aria-hidden="true" />
-        <div className="absolute bottom-16 left-8 w-16 h-16 border-b-2 border-l-2 border-gold-500/30 z-10" aria-hidden="true" />
-        <div className="absolute bottom-16 right-8 w-16 h-16 border-b-2 border-r-2 border-gold-500/30 z-10" aria-hidden="true" />
+        <div className="absolute top-24 left-8 hidden h-16 w-16 border-l-2 border-t-2 border-gold-500/30 z-10 sm:block" aria-hidden="true" />
+        <div className="absolute top-24 right-8 hidden h-16 w-16 border-r-2 border-t-2 border-gold-500/30 z-10 sm:block" aria-hidden="true" />
+        <div className="absolute bottom-16 left-8 hidden h-16 w-16 border-b-2 border-l-2 border-gold-500/30 z-10 sm:block" aria-hidden="true" />
+        <div className="absolute bottom-16 right-8 hidden h-16 w-16 border-b-2 border-r-2 border-gold-500/30 z-10 sm:block" aria-hidden="true" />
 
         {/* Hero content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
+        <div className="relative z-10 mx-auto max-w-5xl px-5 pt-32 pb-20 text-center sm:px-6 sm:py-32 lg:px-8">
           {/* Eyebrow */}
           <p className="inline-flex items-center gap-2 font-heading text-xs uppercase
-                        tracking-[0.3em] text-gold-500 mb-6 animate-fade-in">
-            <span className="w-8 h-px bg-gold-500" aria-hidden="true" />
+                        tracking-[0.18em] text-gold-500 mb-5 animate-fade-in sm:tracking-[0.3em] sm:mb-6">
+            <span className="hidden h-px w-8 bg-gold-500 sm:block" aria-hidden="true" />
             Social Enterprise Across Africa
-            <span className="w-8 h-px bg-gold-500" aria-hidden="true" />
+            <span className="hidden h-px w-8 bg-gold-500 sm:block" aria-hidden="true" />
           </p>
 
           {/* Heading */}
-          <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl
-                         text-white uppercase tracking-widest leading-none mb-6
+          <h1 className="font-heading font-bold text-[clamp(2.55rem,13vw,4.25rem)] sm:text-6xl lg:text-7xl
+                         text-white uppercase tracking-[0.08em] sm:tracking-widest leading-[0.96] mb-5 sm:mb-6
                          animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
             Transforming{' '}
             <span className="text-gold-500">Lives</span>
@@ -142,15 +142,15 @@ export default async function HomePage() {
           </h1>
 
           {/* Subheading */}
-          <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10
+          <p className="text-gray-200 text-base sm:text-xl max-w-[32rem] sm:max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10
                         animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             We shape mindsets, inspire dreams, and help people build dignified, sustainable lives.
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center
+          <div className="mx-auto grid w-full max-w-sm grid-cols-1 gap-3 sm:flex sm:max-w-none sm:flex-row sm:gap-4 sm:justify-center
                           animate-fade-in-up" style={{ animationDelay: '0.45s' }}>
-            <Link href="/contact" className="btn-primary text-base px-8 py-4">
+            <Link href="/contact" className="btn-primary min-h-12 justify-center text-sm sm:text-base sm:px-8 sm:py-4">
               Partner With Us
               <svg className="w-5 h-5" fill="none" stroke="currentColor"
                    strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
@@ -159,13 +159,13 @@ export default async function HomePage() {
             </Link>
             <DonateModal
               triggerText="Get Involved"
-              triggerClassName="btn-outline text-base px-8 py-4"
+              triggerClassName="btn-outline btn-outline-on-dark min-h-12 justify-center text-sm sm:text-base sm:px-8 sm:py-4"
             />
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10
+        <div className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 sm:bottom-8 sm:block
                         animate-bounce text-gray-500" aria-hidden="true">
           <svg className="w-6 h-6" fill="none" stroke="currentColor"
                strokeWidth="2" viewBox="0 0 24 24">
@@ -381,7 +381,7 @@ export default async function HomePage() {
             Dreamfund supports orphans, vulnerable children, women, youth, and pastors through scholarships and grants.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary text-base px-8 py-4">
+            <Link href="/contact" className="btn-primary w-full justify-center text-base px-8 py-4 sm:w-auto">
               Partner With Us
             </Link>
             <DonateModal

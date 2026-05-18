@@ -50,18 +50,25 @@
 
   /* ── Primary button ── */
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-mil-black
+    @apply inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-mil-black
            font-heading font-semibold uppercase tracking-wider text-sm
-           px-6 py-3 rounded transition-all duration-200 hover:shadow-lg hover:shadow-gold-500/20
-           hover:-translate-y-0.5 active:translate-y-0;
+           px-6 py-3 rounded-md shadow-sm shadow-mil-black/20
+           transition-all duration-200 hover:shadow-lg hover:shadow-gold-500/20
+           hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2
+           focus-visible:outline-offset-2 focus-visible:outline-gold-300;
   }
 
   /* ── Outline button ── */
   .btn-outline {
-    @apply inline-flex items-center gap-2 border border-gold-500 text-gold-500
-           hover:bg-gold-500 hover:text-mil-black font-heading font-semibold
-           uppercase tracking-wider text-sm px-6 py-3 rounded
-           transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 border border-gold-500 text-gold-500
+           hover:border-gold-500 hover:bg-gold-500 hover:text-mil-black font-heading font-semibold
+           uppercase tracking-wider text-sm px-6 py-3 rounded-md
+           transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-300;
+  }
+
+  .btn-outline-on-dark {
+    @apply border-gold-300/80 bg-mil-black/35 text-gold-300;
   }
 
   /* ── Ghost button ── */
