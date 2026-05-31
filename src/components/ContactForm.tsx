@@ -25,7 +25,7 @@ export default function ContactForm() {
       formData.append('_subject', `New Contact Form Submission: ${formData.get('subject')}`);
       formData.append('_captcha', 'false'); // Optional: disable captcha
       
-      const res = await fetch('https://formsubmit.co/info@dreamlife.co.ke', {
+      const res = await fetch('https://formsubmit.co/ajax/info@dreamlife.co.ke', {
         method: 'POST',
         body: formData,
       });
