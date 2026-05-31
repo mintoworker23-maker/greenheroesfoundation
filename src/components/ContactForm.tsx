@@ -44,14 +44,15 @@ export default function ContactForm() {
 
   return (
     <form
-  action="https://formsubmit.co/info@dreamlife.co.ke"
+  action="https://api.web3forms.com/submit"
   method="POST"
   className="space-y-5"
   aria-label="Contact form"
 >
+      <input type="hidden" name="access_key" value="6fbbb517-c057-4f0f-9330-46e96650b891">
       <input type="hidden" name="_subject" value="New Contact Form Submission from Dreamlife Africa" />
-<input type="hidden" name="_captcha" value="false" />
-<input type="hidden" name="_next" value="https://www.dreamlifeafrica.co.ke/contact/success" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://www.dreamlifeafrica.co.ke/contact/success" />
       {/* Name row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
