@@ -17,23 +17,17 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus('submitting');
 
-    const formId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-    if (!formId || formId === 'your_form_id_here') {
-      console.error('Formspree ID not configured in .env.local');
-      setStatus('error');
-      return;
-    }
-
     try {
-      // Collect all named fields as a plain object and send as JSON
-      const payload = Object.fromEntries(new FormData(e.currentTarget as HTMLFormElement));
-      const res = await fetch(`https://formspree.io/f/${formId}`, {
+      // Collect all named fields as FormData for formsubmit.co
+      const formData = new FormData(e.currentTarget as HTMLFormElement);
+      
+      // Add recipient email and redirect (optional)
+      formData.append('_subject', `New Contact Form Submission: ${formData.get('subject')}`);
+      formData.append('_captcha', 'false'); // Optional: disable captcha
+      
+      const res = await fetch('https://formsubmit.co/info@dreamlife.co.ke', {
         method: 'POST',
-        body: JSON.stringify(payload),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
+        body: formData,
       });
 
       if (res.ok) {
