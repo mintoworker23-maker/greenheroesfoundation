@@ -21,11 +21,9 @@ export default function ContactForm() {
       // Collect all named fields as FormData for formsubmit.co
       const formData = new FormData(e.currentTarget as HTMLFormElement);
       
-      // Add recipient email and redirect (optional)
-      formData.append('_subject', `New Contact Form Submission: ${formData.get('subject')}`);
-      formData.append('_captcha', 'false'); // Optional: disable captcha
+      formData.append("access_key", "6fbbb517-c057-4f0f-9330-46e96650b891");
       
-      const res = await fetch('https://formsubmit.co/info@dreamlife.co.ke', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
       });
