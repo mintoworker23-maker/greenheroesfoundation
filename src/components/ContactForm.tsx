@@ -13,6 +13,32 @@ type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 export default function ContactForm() {
   const [status, setStatus] = useState<FormStatus>('idle');
 
+  const handleSubmit: React.JSX.IntrinsicElements['form']['onSubmit'] = async (e) => {
+    e.preventDefault();
+    setStatus('submitting');
+
+    try {
+      // Collect all named fields as FormData for formsubmit.co
+      const formData = new FormData(e.currentTarget as HTMLFormElement);
+      
+      // Add recipient email and redirect (optional)
+      formData.append('_subject', `New Contact Form Submission: ${formData.get('subject')}`);
+      formData.append('_captcha', 'false'); // Optional: disable captcha
+      
+      const res = await fetch('https://formsubmit.co/info@dreamlife.co.ke', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (res.ok) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
 
   if (status === 'success') {
     return (
@@ -44,15 +70,11 @@ export default function ContactForm() {
 
   return (
     <form
-  action="https://api.web3forms.com/submit"
-  method="POST"
-  className="space-y-5"
-  aria-label="Contact form"
->
-      <input type="hidden" name="access_key" value="6fbbb517-c057-4f0f-9330-46e96650b891">
-      <input type="hidden" name="_subject" value="New Contact Form Submission from Dreamlife Africa" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://www.dreamlifeafrica.co.ke/contact/success" />
+      onSubmit={handleSubmit}
+      className="space-y-5"
+      aria-label="Contact form"
+      noValidate
+    >
       {/* Name row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
